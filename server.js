@@ -7,7 +7,9 @@ const PORT = process.env.PORT || 3000;
 const DATA_FILE = path.join(__dirname, "data", "users.json");
 
 app.use(express.json({limit:"1mb"}));
-app.use(express.static(__dirname));
+app.use(express.static(__dirname,{extensions:["html"]}));
+app.get("/styles.css",(req,res)=>res.sendFile(path.join(__dirname,"styles.css"),{headers:{"Content-Type":"text/css; charset=utf-8","Cache-Control":"no-store"}}));
+app.get("/app.js",(req,res)=>res.sendFile(path.join(__dirname,"app.js"),{headers:{"Content-Type":"application/javascript; charset=utf-8","Cache-Control":"no-store"}}));
 
 function readUsers(){ try { return JSON.parse(fs.readFileSync(DATA_FILE,"utf8")); } catch { return {}; } }
 function writeUsers(users){ fs.mkdirSync(path.dirname(DATA_FILE),{recursive:true}); fs.writeFileSync(DATA_FILE,JSON.stringify(users,null,2)); }
