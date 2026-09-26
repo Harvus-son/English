@@ -1,26 +1,39 @@
-# English Start
+# English — User Inspector
 
-Готовый одностраничный интерактивный сайт для изучения английского языка.
+Full-stack application for searching public GitHub users and exploring profile information, statistics, photos and repositories.
 
-## Запуск
-Откройте `index.html` в браузере.
+## Features
+- GitHub user search
+- Avatar / profile photo
+- Detailed public profile
+- Repository list with stars, forks and languages
+- Aggregate statistics and language analytics
+- Recent public GitHub activity
+- Editable application-specific bio, location, website and notes
+- Express REST API
+- Persistent custom data in `data/users.json`
+- Responsive desktop/mobile UI
 
-## Возможности
-- Dashboard ученика
-- входной микро-тест
-- определение стартового уровня
-- Learning Path
-- Alphabet
-- словарик и поиск
-- озвучка слов через Web Speech API
-- Sentence Builder
-- Articles
-- Spelling
-- English Tenses
-- Review / My Words
-- XP и достижения
-- Progress
-- Dark Mode
-- сохранение прогресса через LocalStorage
+## Run locally
+Requires Node.js 20+.
+```bash
+npm install
+npm start
+```
+Open http://localhost:3000
 
-Проект сделан без внешних зависимостей, поэтому его можно открыть локально или разместить на GitHub Pages/обычном хостинге.
+## API
+- GET /api/health
+- GET /api/users/search?q=...
+- GET /api/users/:login
+- PUT /api/users/:login/profile
+
+GitHub public data is requested by the server. GitHub API rate limits still apply.
+
+## Architecture
+Frontend: HTML + CSS + vanilla JavaScript  
+Backend: Node.js + Express  
+External data: GitHub REST API  
+Persistence: JSON file
+
+For production, replace JSON storage with a real database and add authentication before allowing multiple people to edit data.
