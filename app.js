@@ -14,14 +14,26 @@ function saveProgress(){localStorage.setItem(KEY_XP,String(state.xp));localStora
 function toast(msg){const el=$("#toast");if(!el)return;el.textContent=msg;el.classList.add("show");clearTimeout(window.toastTimer);window.toastTimer=setTimeout(()=>el.classList.remove("show"),2200);}
 
 const tasks=[
-{type:"choice",q:"Mario starts the level every day. Choose the correct sentence:",options:["Mario start the level every day.","Mario starts the level every day.","Mario does starts the level every day."],answer:1,explain:"С he / she / it в утвердительном предложении глагол получает -s."},
-{type:"choice",q:"Steve does not use a crafting table every minute. Choose the correct sentence:",options:["Steve don't use the crafting table.","Steve doesn't uses the crafting table.","Steve doesn't use the crafting table."],answer:2,explain:"После doesn't используется обычная форма глагола: use."},
+{type:"choice",q:"Quest 01 — Mario starts the level every day. Choose the correct sentence:",options:["Mario start the level every day.","Mario starts the level every day.","Mario does starts the level every day."],answer:1,explain:"С he / she / it в утвердительном предложении глагол получает -s."},
+{type:"choice",q:"Quest 02 — Steve does not use a crafting table every minute. Choose the correct sentence:",options:["Steve don't use the crafting table.","Steve doesn't uses the crafting table.","Steve doesn't use the crafting table."],answer:2,explain:"После doesn't используется обычная форма глагола: use."},
 {type:"choice",q:"Quest 03 — Complete: ___ Sonic run every day?",options:["Does","Do","Is"],answer:0,explain:"С Sonic (he) используем Does."},
 {type:"choice",q:"Quest 04 — Complete: ___ Mario play a level every day?",options:["Do","Does","Is"],answer:1,explain:"С Mario (he) используем Does."},
 {type:"choice",q:"Quest 05 — Choose the correct spelling:",options:["Sonic watchs videos.","Sonic watches videos.","Sonic watch video."],answer:1,explain:"После -ch добавляем -es: watch → watches."},
 {type:"choice",q:"Quest 06 — Choose the correct sentence:",options:["Steve study new recipes.","Steve studies new recipes.","Steve studys new recipes."],answer:1,explain:"Согласная + y меняется на ies: study → studies."},
 {type:"choice",q:"Quest 07 — Read: “Sonic runs fast every day.” What does Sonic do every day?",options:["He sleeps all day.","He runs fast.","He plays chess."],answer:1,explain:"В тексте сказано: Sonic runs fast every day."},
-{type:"input",q:"Quest 08 — Translate: «Марио обычно проходит уровень вечером.»",answer:"Mario usually completes a level in the evening.",accept:["mario usually completes a level in the evening","mario usually completes a level in evening","mario usually finishes a level in the evening"]}
+{type:"input",q:"Quest 08 — Translate: «Марио обычно проходит уровень вечером.»",answer:"Mario usually completes a level in the evening.",accept:["mario usually completes a level in the evening","mario usually finishes a level in the evening"]},
+{type:"choice",q:"Quest 09 — Link explores the map every day. Choose the correct negative sentence:",options:["Link doesn't explore the map every day.","Link don't explores the map every day.","Link doesn't explores the map every day."],answer:0,explain:"После doesn't используем explore без -s."},
+{type:"choice",q:"Quest 10 — Complete: ___ Steve build a base every weekend?",options:["Do","Does","Is"],answer:1,explain:"Steve = he, поэтому используем Does."},
+{type:"choice",q:"Quest 11 — Choose the correct sentence:",options:["Sonic run fast every day.","Sonic runs fast every day.","Sonic running fast every day."],answer:1,explain:"Sonic = he, поэтому run → runs."},
+{type:"choice",q:"Quest 12 — Choose the correct negative:",options:["Mario don't collect coins.","Mario doesn't collects coins.","Mario doesn't collect coins."],answer:2,explain:"Mario = he; после doesn't — collect."},
+{type:"choice",q:"Quest 13 — Choose the correct sentence:",options:["Link explore the map.","Link explores the map.","Link exploring the map."],answer:1,explain:"Link = he, поэтому explore → explores."},
+{type:"choice",q:"Quest 14 — Choose the correct sentence:",options:["They plays together.","They play together.","They does play together."],answer:1,explain:"They используют обычную форму глагола: play."},
+{type:"choice",q:"Quest 15 — Complete: ___ Sonic run fast?",options:["Does","Do","Is"],answer:0,explain:"Sonic = he, поэтому используем Does."},
+{type:"choice",q:"Quest 16 — Complete: ___ Mario collect coins?",options:["Does","Do","Is"],answer:0,explain:"Mario = he, поэтому используем Does."},
+{type:"choice",q:"Quest 17 — Choose the correct sentence:",options:["Steve check his inventory every day.","Steve checks his inventory every day.","Steve checking his inventory every day."],answer:1,explain:"Steve = he, поэтому check → checks."},
+{type:"choice",q:"Quest 18 — Choose the correct sentence:",options:["Mario and Luigi plays together.","Mario and Luigi play together.","Mario and Luigi does play together."],answer:1,explain:"Два персонажа = they, поэтому используем play."},
+{type:"input",q:"Quest 19 — Translate: «Соник бегает быстро каждый день.»",answer:"Sonic runs fast every day.",accept:["sonic runs fast every day"]},
+{type:"input",q:"Quest 20 — Translate: «Стив строит базу каждую неделю.»",answer:"Steve builds a base every week.",accept:["steve builds a base every week"]}
 ];
 
 function renderPractice(){
