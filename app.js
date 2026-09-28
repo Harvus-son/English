@@ -3,7 +3,8 @@ const $$=(s,r=document)=>r.querySelectorAll(s);
 const KEY_XP="english_xp";
 const KEY_PRACTICE="english_practice";
 const KEY_WRITING="english_writing";
-const state={xp:Number(localStorage.getItem(KEY_XP)||0),practice:Number(localStorage.getItem(KEY_PRACTICE)||0)};
+const completed=JSON.parse(localStorage.getItem("english_completed")||"[]");
+const state={xp:Number(localStorage.getItem(KEY_XP)||0),practice:completed.length,completed};
 const titles={lesson:"Present Simple",practice:"Практика",selfwork:"Самостоятельная работа",progress:"Прогресс"};
 
 $$(".nav").forEach(btn=>btn.addEventListener("click",()=>show(btn.dataset.view)));
@@ -17,13 +18,14 @@ function show(view){
 }
 function save(){
   localStorage.setItem(KEY_XP,String(state.xp));
-  localStorage.setItem(KEY_PRACTICE,String(state.practice));
+  localStorage.setItem(KEY_PRACTICE,String(state.completed.length));
   updateProgress();
 }
 function updateProgress(){
   $("#score").textContent=state.xp;
   $("#progressXp").textContent=state.xp;
   $("#practiceResult").textContent=state.practice+" / "+tasks.length;
+  state.practice=state.completed.length;
   const percent=Math.min(100,Math.round((state.practice/tasks.length)*100));
   $("#progressBar").style.width=percent+"%";
   $("#sideProgress").style.width=percent+"%";
@@ -57,7 +59,7 @@ function renderPractice(){
     return '<article class="practice-card" data-task="'+i+'"><span class="task-number">'+number+'</span><h3>'+t.q+'</h3><div class="input-row"><input autocomplete="off" placeholder="Type your answer..."><button data-check>Check</button></div><div class="feedback"></div></article>';
   }).join("");
 
-  $$(".practice-card").forEach(card=>{
+  $(".practice-card").forEach(card=>{
     const i=Number(card.dataset.task);
     const t=tasks[i];
     if(t.type==="choice"){
@@ -74,8 +76,12 @@ function mark(card,ok,message){
   f.innerHTML=(ok?"✓ Correct! ":"✗ Пока неверно. ")+message;
   if(ok&&!card.dataset.done){
     card.dataset.done="1";
-    state.practice++;
-    state.xp+=10;
+    if(!state.completed.includes(Number(card.dataset.task))){
+      state.completed.push(Number(card.dataset.task));
+      state.xp+=10;
+      localStorage.setItem("english_completed",JSON.stringify(state.completed));
+    }
+    state.practice=state.completed.length;
     save();
   }
 }
