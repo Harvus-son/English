@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 260">
+<rect x="12" y="12" width="396" height="236" rx="28" fill="#f1efff"/>
+<circle cx="72" cy="72" r="30" fill="#635bff"/><text x="60" y="81" fill="#fff" font-family="Arial" font-size="24" font-weight="700">S</text>
+<rect x="120" y="47" width="112" height="50" rx="14" fill="#fff"/><text x="143" y="79" fill="#182033" font-family="Arial" font-size="19" font-weight="700">play</text>
+<circle cx="275" cy="72" r="30" fill="#8b5cf6"/><text x="265" y="81" fill="#fff" font-family="Arial" font-size="24" font-weight="700">V</text>
+<path d="M102 72h18M232 72h13" stroke="#635bff" stroke-width="6" stroke-linecap="round"/>
+<rect x="54" y="137" width="312" height="65" rx="18" fill="#fff"/>
+<text x="77" y="165" fill="#788196" font-family="Arial" font-size="14">HE / SHE / IT</text>
+<text x="77" y="190" fill="#182033" font-family="Arial" font-size="24" font-weight="700">play<tspan fill="#635bff">s</tspan></text>
+<text x="224" y="190" fill="#788196" font-family="Arial" font-size="14">+ -S</text>
+</svg>
