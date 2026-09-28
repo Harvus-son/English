@@ -14,14 +14,14 @@ function saveProgress(){localStorage.setItem(KEY_XP,String(state.xp));localStora
 function toast(msg){const el=$("#toast");if(!el)return;el.textContent=msg;el.classList.add("show");clearTimeout(window.toastTimer);window.toastTimer=setTimeout(()=>el.classList.remove("show"),2200);}
 
 const tasks=[
-{type:"choice",q:"Choose the correct sentence:",options:["She play games every day.","She plays games every day.","She does plays games every day."],answer:1,explain:"С He / She / It в утвердительном предложении: play → plays."},
-{type:"choice",q:"Choose the correct negative sentence:",options:["He don't like music.","He doesn't likes music.","He doesn't like music."],answer:2,explain:"После doesn't используется обычная форма глагола: like."},
-{type:"choice",q:"Complete: ___ you work on Monday?",options:["Does","Do","Are"],answer:1,explain:"С you используем Do."},
-{type:"choice",q:"Complete: ___ she play Roblox?",options:["Do","Does","Is"],answer:1,explain:"С she используем Does."},
-{type:"choice",q:"Choose the correct spelling:",options:["He watchs videos.","He watches videos.","He watch video."],answer:1,explain:"После -ch добавляем -es: watch → watches."},
-{type:"choice",q:"Choose the correct sentence:",options:["My brother study English.","My brother studies English.","My brother studys English."],answer:1,explain:"Согласная + y меняется на ies: study → studies."},
-{type:"choice",q:"Read: “Alex wakes up at seven.” What time does Alex wake up?",options:["At six.","At seven.","At eleven."],answer:1,explain:"В тексте сказано: Alex wakes up at seven o'clock."},
-{type:"input",q:"Translate: «Я обычно играю в игры вечером.»",answer:"I usually play games in the evening.",accept:["i usually play games in the evening","i usually play games in evening"]}
+{type:"choice",q:"Mario starts the level every day. Choose the correct sentence:",options:["Mario start the level every day.","Mario starts the level every day.","Mario does starts the level every day."],answer:1,explain:"С he / she / it в утвердительном предложении глагол получает -s."},
+{type:"choice",q:"Steve does not use a crafting table every minute. Choose the correct sentence:",options:["Steve don't use the crafting table.","Steve doesn't uses the crafting table.","Steve doesn't use the crafting table."],answer:2,explain:"После doesn't используется обычная форма глагола: use."},
+{type:"choice",q:"Quest 03 — Complete: ___ Sonic run every day?",options:["Does","Do","Is"],answer:0,explain:"С Sonic (he) используем Does."},
+{type:"choice",q:"Quest 04 — Complete: ___ Mario play a level every day?",options:["Do","Does","Is"],answer:1,explain:"С Mario (he) используем Does."},
+{type:"choice",q:"Quest 05 — Choose the correct spelling:",options:["Sonic watchs videos.","Sonic watches videos.","Sonic watch video."],answer:1,explain:"После -ch добавляем -es: watch → watches."},
+{type:"choice",q:"Quest 06 — Choose the correct sentence:",options:["Steve study new recipes.","Steve studies new recipes.","Steve studys new recipes."],answer:1,explain:"Согласная + y меняется на ies: study → studies."},
+{type:"choice",q:"Quest 07 — Read: “Sonic runs fast every day.” What does Sonic do every day?",options:["He sleeps all day.","He runs fast.","He plays chess."],answer:1,explain:"В тексте сказано: Sonic runs fast every day."},
+{type:"input",q:"Quest 08 — Translate: «Марио обычно проходит уровень вечером.»",answer:"Mario usually completes a level in the evening.",accept:["mario usually completes a level in the evening","mario usually completes a level in evening","mario usually finishes a level in the evening"]}
 ];
 
 function renderPractice(){
