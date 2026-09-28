@@ -1,39 +1,50 @@
-# English — User Inspector
+# English Lab
 
-Full-stack application for searching public GitHub users and exploring profile information, statistics, photos and repositories.
+Интерактивное веб-приложение для обучения английскому языку.
 
-## Features
-- GitHub user search
-- Avatar / profile photo
-- Detailed public profile
-- Repository list with stars, forks and languages
-- Aggregate statistics and language analytics
-- Recent public GitHub activity
-- Editable application-specific bio, location, website and notes
-- Express REST API
-- Persistent custom data in `data/users.json`
-- Responsive desktop/mobile UI
+## Текущий модуль
 
-## Run locally
-Requires Node.js 20+.
-```bash
-npm install
-npm start
-```
-Open http://localhost:3000
+**Урок 01 — Present Simple + Daily Life**
 
-## API
-- GET /api/health
-- GET /api/users/search?q=...
-- GET /api/users/:login
-- PUT /api/users/:login/profile
+Структура:
+1. Information — теория и примеры
+2. Practice — интерактивные задания с мгновенной проверкой
+3. Self Work — самостоятельная работа
+4. Progress — XP и результат
 
-GitHub public data is requested by the server. GitHub API rate limits still apply.
+В уроке есть:
+- Present Simple: утверждения;
+- отрицания с don't / doesn't;
+- вопросы с Do / Does;
+- словарь Daily Life;
+- визуальные SVG-иллюстрации;
+- переводческое задание;
+- мини-говорение;
+- исправление ошибок;
+- поле для письменной работы;
+- сохранение прогресса через localStorage.
 
-## Architecture
-Frontend: HTML + CSS + vanilla JavaScript  
-Backend: Node.js + Express  
-External data: GitHub REST API  
-Persistence: JSON file
+## Запуск
 
-For production, replace JSON storage with a real database and add authentication before allowing multiple people to edit data.
+Установи зависимости командой npm install, затем запусти npm start.
+
+После запуска открой http://localhost:3000.
+
+## Дальнейшая структура курса
+
+Следующие модули можно делать в том же формате:
+
+- Present Continuous
+- Past Simple
+- Future Simple
+- Articles: a / an / the
+- Some / Any / Much / Many
+- Modal verbs
+- Present Perfect
+- Conditionals
+- Vocabulary modules
+- Reading
+- Listening
+- Speaking
+
+Главный принцип платформы: сначала понятное объяснение, затем практика с обратной связью, после этого самостоятельная работа.
