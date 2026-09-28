@@ -1,5 +1,5 @@
 const $=s=>document.querySelector(s);
-const $$=s=>document.querySelectorAll(s);
+const $$=(s,r=document)=>r.querySelectorAll(s);
 const state={xp:Number(localStorage.getItem("english_xp")||0),practice:Number(localStorage.getItem("english_practice")||0)};
 const titles={lesson:"Present Simple",practice:"Практика",selfwork:"Самостоятельная работа",progress:"Прогресс"};
 
