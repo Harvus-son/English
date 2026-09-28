@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>English Lab — интерактивный английский</title>
+<title>English Lab — Present Simple</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="./styles.css">
@@ -17,29 +17,113 @@
 <button class="nav" data-view="selfwork"><span>📝</span> Самостоятельная</button>
 <button class="nav" data-view="progress"><span>📈</span> Прогресс</button>
 </nav>
-<div class="sidebar-bottom"><div class="level-card"><span>Текущий модуль</span><b>Grammar · 01</b><div class="mini-progress"><i id="sideProgress"></i></div><small id="sideProgressText">0% завершено</small></div></div>
+<div class="sidebar-bottom"><div class="level-card"><span>Урок</span><b>Grammar · 01</b><div class="mini-progress"><i id="sideProgress"></i></div><small id="sideProgressText">0% практики</small></div></div>
 </aside>
 <main>
-<header class="topbar"><div><span class="eyebrow">ENGLISH · GRAMMAR</span><h1 id="pageTitle">Present Simple</h1></div><div class="streak">🔥 <b id="score">0</b> XP</div></header>
+<header class="topbar"><div><span class="eyebrow">ENGLISH · GRAMMAR</span><h1 id="pageTitle">Present Simple</h1></div><div class="streak">⭐ <b id="score">0</b> XP</div></header>
 
 <section id="lessonView" class="view active">
-<div class="lesson-hero"><div><span class="eyebrow">УРОК 01</span><h2>Present Simple + Daily Life</h2><p>Научимся говорить о привычках, обычных действиях и задавать вопросы о повседневной жизни.</p><div class="hero-tags"><span>Grammar</span><span>Vocabulary</span><span>Speaking</span></div></div><img src="./assets/daily-routine.svg" alt="Иллюстрация ежедневной рутины"></div>
-<div class="lesson-layout">
-<article class="content-card"><div class="section-heading"><span class="step">01</span><div><span class="eyebrow">INFORMATION</span><h3>Когда используем Present Simple?</h3></div></div><p>Present Simple нужен, когда мы говорим о том, что происходит <strong>обычно, регулярно или является фактом</strong>.</p><div class="example-grid"><div><b>Habits</b><span>I play games every day.</span><small>Я играю в игры каждый день.</small></div><div><b>Facts</b><span>Water boils at 100°C.</span><small>Вода кипит при 100°C.</small></div><div><b>Routine</b><span>I work on Monday.</span><small>Я работаю в понедельник.</small></div></div></article>
-<article class="content-card"><div class="section-heading"><span class="step">02</span><div><span class="eyebrow">GRAMMAR</span><h3>Главная формула</h3></div></div><div class="formula"><span>I / You / We / They</span><strong>play</strong></div><div class="formula accent"><span>He / She / It</span><strong>play<span class="mark">s</span></strong></div><div class="note">💡 <b>He / She / It</b> обычно получают окончание <b>-s</b>: play → plays, work → works.</div></article>
-<article class="content-card"><div class="section-heading"><span class="step">03</span><div><span class="eyebrow">NEGATIVE</span><h3>Отрицание</h3></div></div><div class="code-line"><span>I / You / We / They</span><b>don't + verb</b></div><div class="code-line"><span>He / She / It</span><b>doesn't + verb</b></div><div class="warning">⚠️ После <b>doesn't</b> окончание <b>-s</b> исчезает: <strong>She doesn't play</strong>, не “doesn't plays”.</div></article>
-<article class="content-card"><div class="section-heading"><span class="step">04</span><div><span class="eyebrow">QUESTIONS</span><h3>Как задавать вопросы?</h3></div></div><div class="question-example"><span>Do</span> you play games?</div><div class="question-example"><span>Does</span> she like music?</div><div class="answers"><b>Yes, I do.</b><b>No, I don't.</b><b>Yes, she does.</b></div></article>
-<article class="content-card wide"><div class="section-heading"><span class="step">05</span><div><span class="eyebrow">VOCABULARY</span><h3>Daily Life — слова урока</h3></div></div><div class="vocab-grid"><div><b>wake up</b><span>просыпаться</span></div><div><b>get up</b><span>вставать</span></div><div><b>go to work</b><span>идти на работу</span></div><div><b>study</b><span>учиться</span></div><div><b>play games</b><span>играть</span></div><div><b>watch videos</b><span>смотреть видео</span></div><div><b>listen to music</b><span>слушать музыку</span></div><div><b>meet friends</b><span>встречаться с друзьями</span></div><div><b>cook</b><span>готовить</span></div><div><b>relax</b><span>отдыхать</span></div><div><b>read</b><span>читать</span></div><div><b>go to bed</b><span>ложиться спать</span></div></div></article>
-<article class="content-card wide visual-card"><div><div class="section-heading"><span class="step">06</span><div><span class="eyebrow">MEMORY</span><h3>Запомни через ситуацию</h3></div></div><p>Представь обычный день: ты просыпаешься, учишься или работаешь, отдыхаешь вечером и ложишься спать.</p><p class="big-example">I wake up → I study → I play games → I relax → I go to bed.</p></div><img src="./assets/grammar.svg" alt="Иллюстрация грамматической схемы"></article>
+<div class="lesson-hero">
+<div><span class="eyebrow">УРОК 01 · ~60 МИНУТ</span><h2>Present Simple + Daily Life</h2><p>Полный урок: понять правило, увидеть его в контексте, потренироваться и самостоятельно использовать английский.</p><div class="hero-tags"><span>Grammar</span><span>Vocabulary</span><span>Reading</span><span>Speaking</span></div></div>
+<img src="./assets/daily-routine.svg" alt="Схема ежедневной рутины">
 </div>
-<button class="next-button" data-go="practice">Перейти к практике →</button>
+
+<div class="lesson-layout">
+<article class="content-card wide"><div class="section-heading"><span class="step">01</span><div><span class="eyebrow">WARM-UP · 5 MIN</span><h3>Что мы будем изучать?</h3></div></div>
+<p>В английском важно не только знать отдельные слова, но и понимать, <strong>как они соединяются в предложение</strong>. В этом уроке ты научишься описывать обычный день: когда просыпаешься, где учишься или работаешь, что делаешь вечером и что тебе нравится.</p>
+<div class="goal-grid"><div><b>🎯 Grammar</b><span>Present Simple</span></div><div><b>🧠 Vocabulary</b><span>Daily Life</span></div><div><b>📖 Reading</b><span>Короткий текст</span></div><div><b>🗣️ Speaking</b><span>Рассказываем о себе</span></div></div>
+</article>
+
+<article class="content-card wide"><div class="section-heading"><span class="step">02</span><div><span class="eyebrow">INFORMATION · 8 MIN</span><h3>Когда используется Present Simple?</h3></div></div>
+<p><strong>Present Simple</strong> — простое настоящее время. Оно используется, когда действие происходит регулярно, является привычкой, фактом или частью обычного расписания.</p>
+<div class="use-grid">
+<div><b>🔁 Привычки</b><p>I play games every evening.</p><small>Я играю в игры каждый вечер.</small></div>
+<div><b>📅 Регулярные действия</b><p>She studies on Monday.</p><small>Она учится по понедельникам.</small></div>
+<div><b>🌍 Факты</b><p>Water boils at 100°C.</p><small>Вода кипит при 100°C.</small></div>
+<div><b>❤️ Предпочтения</b><p>I like music.</p><small>Мне нравится музыка.</small></div>
+</div>
+<div class="timeline"><span>usually</span><i></i><span>every day</span><i></i><span>often</span><i></i><span>always</span></div>
+<p class="muted">Слова <strong>always, usually, often, sometimes, every day</strong> часто помогают понять, что речь идёт о регулярном действии.</p>
+</article>
+
+<article class="content-card"><div class="section-heading"><span class="step">03</span><div><span class="eyebrow">GRAMMAR · 8 MIN</span><h3>Утвердительное предложение</h3></div></div>
+<p>Базовая схема очень простая:</p>
+<div class="formula"><span>Subject</span><strong>+</strong><span>verb</span><strong>+</strong><span>rest</span></div>
+<div class="sentence-map"><span class="subject">I</span><span>+</span><span class="verb">play</span><span>+</span><span class="rest">games every day.</span></div>
+<p>С <strong>I / You / We / They</strong> глагол остаётся в обычной форме:</p>
+<div class="mini-table"><span>I play</span><span>You play</span><span>We play</span><span>They play</span></div>
+<p>С <strong>He / She / It</strong> к глаголу обычно добавляется <strong>-s</strong>:</p>
+<div class="sentence-map"><span class="subject">She</span><span>+</span><span class="verb">play<span class="mark">s</span></span><span>+</span><span class="rest">games.</span></div>
+<div class="note">💡 Представляй <strong>-s</strong> как маленький сигнал: «это he / she / it».</div>
+</article>
+
+<article class="content-card"><div class="section-heading"><span class="step">04</span><div><span class="eyebrow">SPELLING · 4 MIN</span><h3>Как добавлять -s?</h3></div></div>
+<div class="spell-list"><div><b>play → plays</b><span>обычное -s</span></div><div><b>watch → watches</b><span>после ch → -es</span></div><div><b>go → goes</b><span>go → goes</span></div><div><b>study → studies</b><span>согласная + y → ies</span></div></div>
+<div class="warning">⚠️ Не нужно учить все исключения сразу. Сейчас достаточно запомнить эти основные модели.</div>
+</article>
+
+<article class="content-card"><div class="section-heading"><span class="step">05</span><div><span class="eyebrow">NEGATIVE · 5 MIN</span><h3>Отрицание</h3></div></div>
+<p>Для отрицания используются <strong>don't</strong> и <strong>doesn't</strong>.</p>
+<div class="formula-stack"><div><span>I / You / We / They</span><b>don't + verb</b></div><div><span>He / She / It</span><b>doesn't + verb</b></div></div>
+<div class="example-box"><b>She doesn't play games.</b><span>Она не играет в игры.</span></div>
+<div class="warning">⚠️ После <strong>doesn't</strong> у глагола нет -s: <strong>doesn't play</strong>, а не “doesn't plays”.</div>
+</article>
+
+<article class="content-card"><div class="section-heading"><span class="step">06</span><div><span class="eyebrow">QUESTIONS · 5 MIN</span><h3>Вопросы и короткие ответы</h3></div></div>
+<p>В вопросе <strong>Do / Does</strong> ставится перед подлежащим:</p>
+<div class="question-flow"><span>Do</span><span>you</span><span>play</span><span>games?</span></div>
+<div class="question-flow"><span>Does</span><span>she</span><span>like</span><span>music?</span></div>
+<div class="answers"><b>Yes, I do.</b><b>No, I don't.</b><b>Yes, she does.</b><b>No, she doesn't.</b></div>
+</article>
+
+<article class="content-card wide"><div class="section-heading"><span class="step">07</span><div><span class="eyebrow">READING · 7 MIN</span><h3>Present Simple в настоящем тексте</h3></div></div>
+<div class="reading"><div class="reading-art"><img src="./assets/grammar.svg" alt="Грамматическая схема"></div><div>
+<h4>Alex's Typical Day</h4>
+<p>Alex <strong>wakes up</strong> at seven o'clock. He <strong>gets up</strong> and <strong>has</strong> breakfast. Then he <strong>goes</strong> to school. Alex <strong>studies</strong> English and computer science. After school, he <strong>meets</strong> his friends. In the evening, he <strong>plays</strong> games, <strong>watches</strong> videos and <strong>listens</strong> to music. He usually <strong>goes</strong> to bed at eleven.</p>
+<div class="text-questions"><span>1. What time does Alex wake up?</span><span>2. What does he study?</span><span>3. What does he do in the evening?</span></div>
+</div></div>
+</article>
+
+<article class="content-card wide"><div class="section-heading"><span class="step">08</span><div><span class="eyebrow">VOCABULARY · 5 MIN</span><h3>Daily Life</h3></div></div>
+<p>Старайся запоминать слово вместе с действием и примером, а не как отдельный перевод.</p>
+<div class="vocab-grid">
+<div><b>wake up</b><span>просыпаться</span><em>I wake up at 7.</em></div><div><b>get up</b><span>вставать</span><em>I get up early.</em></div>
+<div><b>have breakfast</b><span>завтракать</span><em>I have breakfast.</em></div><div><b>go to school</b><span>идти в школу</span><em>She goes to school.</em></div>
+<div><b>study</b><span>учиться</span><em>We study English.</em></div><div><b>work</b><span>работать</span><em>He works here.</em></div>
+<div><b>play games</b><span>играть</span><em>I play games.</em></div><div><b>watch videos</b><span>смотреть видео</span><em>She watches videos.</em></div>
+<div><b>listen to music</b><span>слушать музыку</span><em>They listen to music.</em></div><div><b>meet friends</b><span>встречаться</span><em>I meet friends.</em></div>
+<div><b>relax</b><span>отдыхать</span><em>We relax at home.</em></div><div><b>go to bed</b><span>ложиться спать</span><em>He goes to bed late.</em></div>
+</div>
+</article>
+
+<article class="content-card wide"><div class="section-heading"><span class="step">09</span><div><span class="eyebrow">VISUAL SCHEME · 3 MIN</span><h3>Собираем предложение по шагам</h3></div></div>
+<div class="big-scheme"><div><small>WHO?</small><b>She</b></div><strong>→</strong><div><small>WHAT?</small><b>plays</b></div><strong>→</strong><div><small>WHAT?</small><b>games</b></div><strong>→</strong><div><small>WHEN?</small><b>every day</b></div></div>
+<p class="big-example">She plays games every day.</p>
+</article>
+</div>
+<button class="next-button" data-go="practice">Я понял — перейти к практике →</button>
 </section>
 
-<section id="practiceView" class="view"><div class="section-intro"><span class="eyebrow">PRACTICE</span><h2>Проверим, как ты понял тему</h2><p>Отвечай на задания. После каждого ответа ты сразу увидишь результат.</p></div><div id="practiceTasks" class="tasks"></div><button id="finishPractice" class="next-button">Завершить практику</button></section>
+<section id="practiceView" class="view">
+<div class="section-intro"><span class="eyebrow">PRACTICE · 10–15 MIN</span><h2>Практика</h2><p>8 заданий от простого к более сложному. Ошибки не штрафуют XP — сначала попробуй ещё раз.</p></div>
+<div id="practiceTasks" class="tasks"></div><button id="finishPractice" class="next-button">Завершить практику</button>
+</section>
 
-<section id="selfworkView" class="view"><div class="section-intro"><span class="eyebrow">SELF WORK</span><h2>Самостоятельная работа</h2><p>Здесь уже меньше подсказок. Выполни задания самостоятельно и проверь себя в конце.</p></div><div class="self-grid"><article class="content-card"><span class="task-number">01</span><h3>Исправь ошибки</h3><p>Найди и исправь ошибки в предложениях.</p><div class="self-list"><code>She play games every day.</code><code>He don't like football.</code><code>Does she likes music?</code><code>They plays Roblox.</code></div></article><article class="content-card"><span class="task-number">02</span><h3>Напиши о своём дне</h3><p>Составь <strong>5 предложений</strong> о том, что ты обычно делаешь. Используй минимум 3 слова из Vocabulary.</p><textarea id="writingTask" placeholder="I usually wake up at..."></textarea></article><article class="content-card wide"><span class="task-number">03</span><h3>Мини-говорение</h3><p>Ответь вслух на вопросы:</p><div class="speech-grid"><span>What time do you wake up?</span><span>What do you do after school/work?</span><span>Do you play games?</span><span>What do you do in the evening?</span></div></article></div><button id="showAnswers" class="ghost-button">Показать ответы к заданию 01</button><div id="answers" class="answer-panel hidden"></div></section>
+<section id="selfworkView" class="view">
+<div class="section-intro"><span class="eyebrow">SELF WORK · 10 MIN</span><h2>Самостоятельная работа</h2><p>Теперь попробуй использовать правило без подсказки.</p></div>
+<div class="self-grid">
+<article class="content-card"><span class="task-number">01</span><h3>Исправь ошибки</h3><p>Перепиши предложения правильно.</p><div class="self-list"><code>She play games every day.</code><code>He don't like football.</code><code>Does she likes music?</code><code>They plays Roblox.</code><code>My brother watch videos.</code></div></article>
+<article class="content-card"><span class="task-number">02</span><h3>Напиши о своём дне</h3><p>Составь <strong>6–8 предложений</strong>. Используй минимум 5 слов из Vocabulary.</p><textarea id="writingTask" placeholder="I usually wake up at..."></textarea><button id="saveWriting" class="small-button">Сохранить ответ</button><span id="writingStatus" class="save-status"></span></article>
+<article class="content-card wide"><span class="task-number">03</span><h3>Мини-говорение</h3><p>Ответь вслух полными предложениями:</p><div class="speech-grid"><span>What time do you wake up?</span><span>Where do you study or work?</span><span>What do you do after school/work?</span><span>What do you do in the evening?</span><span>Do you play games?</span><span>What time do you go to bed?</span></div></article>
+</div>
+<button id="showAnswers" class="ghost-button">Показать ответы к заданию 01</button><div id="answers" class="answer-panel hidden"></div>
+</section>
 
-<section id="progressView" class="view"><div class="section-intro"><span class="eyebrow">PROGRESS</span><h2>Твой прогресс</h2><p>Результаты сохраняются в браузере на этом устройстве.</p></div><div class="progress-overview"><div class="big-xp"><span>XP за урок</span><b id="progressXp">0</b></div><div><span>Практика</span><strong id="practiceResult">0 / 5</strong><div class="progress-track"><i id="progressBar"></i></div></div></div><div class="content-card"><h3>Что изучено</h3><div class="check-list"><span>✓ Present Simple: утверждения</span><span>✓ Present Simple: отрицания</span><span>✓ Do / Does в вопросах</span><span>✓ Daily Life vocabulary</span><span>○ Следующая тема: Present Continuous</span></div></div></section>
+<section id="progressView" class="view">
+<div class="section-intro"><span class="eyebrow">PROGRESS</span><h2>Твой прогресс</h2><p>Результаты и письменный ответ сохраняются в браузере на этом устройстве.</p></div>
+<div class="progress-overview"><div class="big-xp"><span>XP за урок</span><b id="progressXp">0</b></div><div><span>Практика</span><strong id="practiceResult">0 / 8</strong><div class="progress-track"><i id="progressBar"></i></div></div></div>
+<div class="content-card"><h3>Что изучено</h3><div class="check-list"><span>✓ Когда используется Present Simple</span><span>✓ Утверждения и окончание -s</span><span>✓ Основные правила spelling</span><span>✓ don't / doesn't</span><span>✓ Do / Does в вопросах</span><span>✓ Daily Life vocabulary</span><span>✓ Reading: Alex's Typical Day</span><span>○ Следующая тема: Present Continuous</span></div></div>
+</section>
 </main></div>
 <div id="toast" class="toast"></div><script src="./app.js"></script>
 </body></html>
