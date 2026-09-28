@@ -1,9 +1,45 @@
 <!doctype html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>English — User Inspector</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="./styles.css"></head>
-<body><div class="shell"><aside class="sidebar"><div class="brand"><span class="brand-mark">E</span><div><b>English</b><small>User Inspector</small></div></div><nav>
-<button class="nav active" data-view="search">⌕ <span>Search users</span></button><button class="nav" data-view="profile">◉ <span>User profile</span></button><button class="nav" data-view="analytics">▦ <span>Statistics</span></button><button class="nav" data-view="settings">⚙ <span>Settings</span></button></nav><div class="side-footer">GitHub data · live API</div></aside>
-<main><header class="topbar"><div><span class="eyebrow">USER INTELLIGENCE</span><h1 id="pageTitle">Search GitHub users</h1></div><div class="status"><i></i> API connected</div></header>
-<section id="searchView" class="view active"><div class="hero"><div><span class="eyebrow">EXPLORE</span><h2>Find a person and inspect their public profile.</h2><p>Search GitHub, open a detailed profile, view activity and repository statistics, and keep your own editable notes.</p></div><div class="hero-art">◎</div></div><form id="searchForm" class="searchbox"><span>⌕</span><input id="searchInput" placeholder="Search by username or name..." autocomplete="off"><button>Search</button></form><div id="searchMeta" class="section-meta"></div><div id="results" class="user-grid"></div></section>
-<section id="profileView" class="view"><div id="profile"></div></section>
-<section id="analyticsView" class="view"><div id="analytics"></div></section>
-<section id="settingsView" class="view"><div class="panel narrow"><span class="eyebrow">LOCAL PROFILE DATA</span><h2>Application settings</h2><p class="muted">Custom profile fields are stored by the Express backend in <code>data/users.json</code>.</p><div class="setting"><b>Backend</b><span>Node.js + Express</span></div><div class="setting"><b>Data source</b><span>GitHub REST API</span></div><div class="setting"><b>Frontend</b><span>Vanilla HTML / CSS / JS</span></div></div></section></main></div><div id="toast" class="toast"></div><script src="./app.js"></script></body></html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>English Lab — интерактивный английский</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+<div class="app">
+<aside class="sidebar">
+<a class="brand" href="#"><span class="brand-mark">E</span><span><strong>English Lab</strong><small>Учимся через практику</small></span></a>
+<nav>
+<button class="nav active" data-view="lesson"><span>📖</span> Урок</button>
+<button class="nav" data-view="practice"><span>⚡</span> Практика</button>
+<button class="nav" data-view="selfwork"><span>📝</span> Самостоятельная</button>
+<button class="nav" data-view="progress"><span>📈</span> Прогресс</button>
+</nav>
+<div class="sidebar-bottom"><div class="level-card"><span>Текущий модуль</span><b>Grammar · 01</b><div class="mini-progress"><i id="sideProgress"></i></div><small id="sideProgressText">0% завершено</small></div></div>
+</aside>
+<main>
+<header class="topbar"><div><span class="eyebrow">ENGLISH · GRAMMAR</span><h1 id="pageTitle">Present Simple</h1></div><div class="streak">🔥 <b id="score">0</b> XP</div></header>
+
+<section id="lessonView" class="view active">
+<div class="lesson-hero"><div><span class="eyebrow">УРОК 01</span><h2>Present Simple + Daily Life</h2><p>Научимся говорить о привычках, обычных действиях и задавать вопросы о повседневной жизни.</p><div class="hero-tags"><span>Grammar</span><span>Vocabulary</span><span>Speaking</span></div></div><img src="./assets/daily-routine.svg" alt="Иллюстрация ежедневной рутины"></div>
+<div class="lesson-layout">
+<article class="content-card"><div class="section-heading"><span class="step">01</span><div><span class="eyebrow">INFORMATION</span><h3>Когда используем Present Simple?</h3></div></div><p>Present Simple нужен, когда мы говорим о том, что происходит <strong>обычно, регулярно или является фактом</strong>.</p><div class="example-grid"><div><b>Habits</b><span>I play games every day.</span><small>Я играю в игры каждый день.</small></div><div><b>Facts</b><span>Water boils at 100°C.</span><small>Вода кипит при 100°C.</small></div><div><b>Routine</b><span>I work on Monday.</span><small>Я работаю в понедельник.</small></div></div></article>
+<article class="content-card"><div class="section-heading"><span class="step">02</span><div><span class="eyebrow">GRAMMAR</span><h3>Главная формула</h3></div></div><div class="formula"><span>I / You / We / They</span><strong>play</strong></div><div class="formula accent"><span>He / She / It</span><strong>play<span class="mark">s</span></strong></div><div class="note">💡 <b>He / She / It</b> обычно получают окончание <b>-s</b>: play → plays, work → works.</div></article>
+<article class="content-card"><div class="section-heading"><span class="step">03</span><div><span class="eyebrow">NEGATIVE</span><h3>Отрицание</h3></div></div><div class="code-line"><span>I / You / We / They</span><b>don't + verb</b></div><div class="code-line"><span>He / She / It</span><b>doesn't + verb</b></div><div class="warning">⚠️ После <b>doesn't</b> окончание <b>-s</b> исчезает: <strong>She doesn't play</strong>, не “doesn't plays”.</div></article>
+<article class="content-card"><div class="section-heading"><span class="step">04</span><div><span class="eyebrow">QUESTIONS</span><h3>Как задавать вопросы?</h3></div></div><div class="question-example"><span>Do</span> you play games?</div><div class="question-example"><span>Does</span> she like music?</div><div class="answers"><b>Yes, I do.</b><b>No, I don't.</b><b>Yes, she does.</b></div></article>
+<article class="content-card wide"><div class="section-heading"><span class="step">05</span><div><span class="eyebrow">VOCABULARY</span><h3>Daily Life — слова урока</h3></div></div><div class="vocab-grid"><div><b>wake up</b><span>просыпаться</span></div><div><b>get up</b><span>вставать</span></div><div><b>go to work</b><span>идти на работу</span></div><div><b>study</b><span>учиться</span></div><div><b>play games</b><span>играть</span></div><div><b>watch videos</b><span>смотреть видео</span></div><div><b>listen to music</b><span>слушать музыку</span></div><div><b>meet friends</b><span>встречаться с друзьями</span></div><div><b>cook</b><span>готовить</span></div><div><b>relax</b><span>отдыхать</span></div><div><b>read</b><span>читать</span></div><div><b>go to bed</b><span>ложиться спать</span></div></div></article>
+<article class="content-card wide visual-card"><div><div class="section-heading"><span class="step">06</span><div><span class="eyebrow">MEMORY</span><h3>Запомни через ситуацию</h3></div></div><p>Представь обычный день: ты просыпаешься, учишься или работаешь, отдыхаешь вечером и ложишься спать.</p><p class="big-example">I wake up → I study → I play games → I relax → I go to bed.</p></div><img src="./assets/grammar.svg" alt="Иллюстрация грамматической схемы"></article>
+</div>
+<button class="next-button" data-go="practice">Перейти к практике →</button>
+</section>
+
+<section id="practiceView" class="view"><div class="section-intro"><span class="eyebrow">PRACTICE</span><h2>Проверим, как ты понял тему</h2><p>Отвечай на задания. После каждого ответа ты сразу увидишь результат.</p></div><div id="practiceTasks" class="tasks"></div><button id="finishPractice" class="next-button">Завершить практику</button></section>
+
+<section id="selfworkView" class="view"><div class="section-intro"><span class="eyebrow">SELF WORK</span><h2>Самостоятельная работа</h2><p>Здесь уже меньше подсказок. Выполни задания самостоятельно и проверь себя в конце.</p></div><div class="self-grid"><article class="content-card"><span class="task-number">01</span><h3>Исправь ошибки</h3><p>Найди и исправь ошибки в предложениях.</p><div class="self-list"><code>She play games every day.</code><code>He don't like football.</code><code>Does she likes music?</code><code>They plays Roblox.</code></div></article><article class="content-card"><span class="task-number">02</span><h3>Напиши о своём дне</h3><p>Составь <strong>5 предложений</strong> о том, что ты обычно делаешь. Используй минимум 3 слова из Vocabulary.</p><textarea id="writingTask" placeholder="I usually wake up at..."></textarea></article><article class="content-card wide"><span class="task-number">03</span><h3>Мини-говорение</h3><p>Ответь вслух на вопросы:</p><div class="speech-grid"><span>What time do you wake up?</span><span>What do you do after school/work?</span><span>Do you play games?</span><span>What do you do in the evening?</span></div></article></div><button id="showAnswers" class="ghost-button">Показать ответы к заданию 01</button><div id="answers" class="answer-panel hidden"></div></section>
+
+<section id="progressView" class="view"><div class="section-intro"><span class="eyebrow">PROGRESS</span><h2>Твой прогресс</h2><p>Результаты сохраняются в браузере на этом устройстве.</p></div><div class="progress-overview"><div class="big-xp"><span>XP за урок</span><b id="progressXp">0</b></div><div><span>Практика</span><strong id="practiceResult">0 / 5</strong><div class="progress-track"><i id="progressBar"></i></div></div></div><div class="content-card"><h3>Что изучено</h3><div class="check-list"><span>✓ Present Simple: утверждения</span><span>✓ Present Simple: отрицания</span><span>✓ Do / Does в вопросах</span><span>✓ Daily Life vocabulary</span><span>○ Следующая тема: Present Continuous</span></div></div></section>
+</main></div>
+<div id="toast" class="toast"></div><script src="./app.js"></script>
+</body></html>
