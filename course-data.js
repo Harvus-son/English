@@ -85,3 +85,128 @@ perfect: [
 {q:"By Friday, I ___ the project.",o:["will have finished","had finished","have finished"],a:0,e:"Future Perfect: will have + V3 — действие будет завершено к моменту в будущем."}
 ]
 };
+
+const ENGLISH_TOPIC_QUESTIONS = {
+presentSimple: [
+{q:"She usually ___ games after school.",o:["play","plays","is playing"],a:1,e:"Usually показывает привычку; she + глагол с -s."},
+{q:"My friends ___ football on Fridays.",o:["plays","play","are play"],a:1,e:"My friends = they, поэтому используется play."},
+{q:"He ___ like horror games.",o:["don't","doesn't","isn't"],a:1,e:"Отрицание Present Simple: he doesn't + начальная форма."},
+{q:"___ your sister speak English?",o:["Do","Does","Is"],a:1,e:"В вопросе с your sister (she) используем Does."},
+{q:"Water ___ at 100°C under standard conditions.",o:["boil","boils","is boiling"],a:1,e:"Научный факт описывается в Present Simple."},
+{q:"Choose the correct sentence.",o:["Alex watch videos every day.","Alex watches videos every day.","Alex watching videos every day."],a:1,e:"После -ch добавляем -es: watch → watches."},
+{q:"They don't ___ early on Sundays.",o:["gets up","get up","getting up"],a:1,e:"После don't используется начальная форма глагола."},
+{q:"I ___ my grandparents every weekend.",o:["visit","visits","am visit"],a:0,e:"С I глагол остаётся в начальной форме."},
+{q:"___ he play Roblox every evening?",o:["Do","Does","Is"],a:1,e:"He → Does + subject + начальная форма."},
+{q:"Mila ___ English twice a week.",o:["study","studies","studys"],a:1,e:"Согласная + y: study → studies."},
+{q:"Choose the correct negative.",o:["She doesn't likes tea.","She don't like tea.","She doesn't like tea."],a:2,e:"После doesn't не добавляем -s к основному глаголу."},
+{q:"Which phrase often signals a habit?",o:["right now","at the moment","every morning"],a:2,e:"Every morning указывает на повторяющееся действие."},
+{q:"My brother never ___ his keys.",o:["forget","forgets","is forgetting"],a:1,e:"He → forgets; never описывает привычку."},
+{q:"Choose the correct question: «Где они живут?»",o:["Where do they live?","Where they live?","Where does they live?"],a:0,e:"Where + do + they + начальная форма глагола."},
+{q:"What ___ you usually do after school?",o:["are","does","do"],a:2,e:"Вопрос Present Simple с you: What do you do…?"}
+],
+presentContinuous: [
+{q:"Look! The cat ___ on the keyboard.",o:["sleeps","is sleeping","sleep"],a:1,e:"Look! указывает на действие прямо сейчас."},
+{q:"I ___ my homework at the moment.",o:["do","am doing","does"],a:1,e:"I + am + глагол-ing."},
+{q:"They ___ watching TV now.",o:["isn't","aren't","don't"],a:1,e:"They → aren't + verb-ing."},
+{q:"___ she listening to music?",o:["Does","Is","Do"],a:1,e:"Вопрос: Is + she + verb-ing?"}, 
+{q:"Choose the correct form.",o:["runing","running","runnning"],a:1,e:"Run → running: последняя согласная удваивается."},
+{q:"Listen! Someone ___ at the door.",o:["knocks","is knocking","knock"],a:1,e:"Listen! действие происходит в момент речи."},
+{q:"We ___ a new project this week.",o:["are working on","works on","work on now"],a:0,e:"Временная ситуация в текущий период: are working on."},
+{q:"He ___ a book right now.",o:["is reading","reads usually","read"],a:0,e:"Right now — Present Continuous."},
+{q:"Choose the correct negative.",o:["She not sleeping.","She isn't sleeping.","She doesn't sleeping."],a:1,e:"Отрицание: isn't + verb-ing."},
+{q:"What ___ you doing?",o:["do","are","does"],a:1,e:"В вопросе What + are + you + doing."},
+{q:"The children ___ in the garden at the moment.",o:["are playing","play every day","plays"],a:0,e:"At the moment обозначает действие сейчас."},
+{q:"Choose the correct spelling.",o:["makeing","making","makeingg"],a:1,e:"В глаголах на -e конечная e обычно убирается: make → making."},
+{q:"Which sentence describes an action happening now?",o:["I walk to school every day.","I am walking to school now.","I walked yesterday."],a:1,e:"Am walking описывает процесс сейчас."},
+{q:"She ___ coffee; she is drinking tea.",o:["isn't drinking","doesn't drinking","not drinking"],a:0,e:"Present Continuous negative: isn't + verb-ing."},
+{q:"___ they studying for the test right now?",o:["Do","Are","Does"],a:1,e:"They → Are + they + studying?"}
+],
+pastContinuous: [
+{q:"At 8 p.m. yesterday, I ___ a film.",o:["watched","was watching","am watching"],a:1,e:"Действие было в процессе в конкретный момент прошлого."},
+{q:"They ___ playing when the lights went out.",o:["was","were","are"],a:1,e:"They + were + verb-ing."},
+{q:"She ___ sleeping at midnight.",o:["wasn't","didn't","weren't"],a:0,e:"She + wasn't + verb-ing."},
+{q:"___ you studying when I called?",o:["Did","Were","Was"],a:1,e:"Вопрос: Were + you + verb-ing?"}, 
+{q:"While I ___, my brother was cooking.",o:["was reading","readed","am reading"],a:0,e:"While часто вводит длительное действие в прошлом."},
+{q:"The hero ___ through the forest when it began to rain.",o:["was walking","walked every day","is walking"],a:0,e:"Действие уже шло, когда произошло другое событие."},
+{q:"Choose the correct sentence.",o:["They was playing outside.","They were playing outside.","They were play outside."],a:1,e:"Were + playing."},
+{q:"What ___ he doing at 6 yesterday?",o:["were","did","was"],a:2,e:"He + was + doing."},
+{q:"I ___ not listening when the teacher asked me.",o:["were","was","did"],a:1,e:"I + was not / wasn't + verb-ing."},
+{q:"The players were resting while the coach ___.",o:["was talking","talked now","is talk"],a:0,e:"Два параллельных процесса в прошлом могут использовать Past Continuous."},
+{q:"Which word often introduces a longer background action?",o:["while","tomorrow","usually"],a:0,e:"While часто используется с длительным действием."},
+{q:"We ___ dinner when the phone rang.",o:["were having","had every day","are having"],a:0,e:"Ужин был в процессе, когда зазвонил телефон."},
+{q:"Choose the correct question.",o:["Was they waiting?","Were they waiting?","Did they waiting?"],a:1,e:"С they используется were."},
+{q:"The sun ___ while we were walking home.",o:["was setting","were setting","sets now"],a:0,e:"The sun = it → was setting."},
+{q:"When the boss entered, the workers ___ about the plan.",o:["were talking","was talking","talking"],a:0,e:"Workers = they → were talking."}
+],
+futureContinuous: [
+{q:"At this time tomorrow, I ___ to Berlin.",o:["will travel","will be travelling","am travelled"],a:1,e:"Future Continuous: will be + verb-ing для процесса в момент будущего."},
+{q:"At 9 p.m., she ___ be working.",o:["won't","doesn't","isn't"],a:0,e:"Отрицание: won't be + verb-ing."},
+{q:"___ you be using the computer this evening?",o:["Will","Do","Are"],a:0,e:"Вопрос: Will + subject + be + verb-ing?"}, 
+{q:"This time next week, we ___ on the beach.",o:["will be relaxing","will relaxing","are relax"],a:0,e:"Will be relaxing показывает процесс в определённый момент будущего."},
+{q:"At noon tomorrow, the team ___ the final match.",o:["will be playing","will plays","will playing"],a:0,e:"После will be нужен глагол с -ing."},
+{q:"Choose the correct negative.",o:["I won't be sleeping at 10.","I don't be sleeping at 10.","I won't sleeping at 10."],a:0,e:"Won't be + verb-ing."},
+{q:"What ___ they be doing at midnight?",o:["do","will","are"],a:1,e:"What + will + subject + be + verb-ing."},
+{q:"At 6 tomorrow morning, the plane ___ over the ocean.",o:["will be flying","will flying","flies yesterday"],a:0,e:"Действие будет продолжаться в заданный момент будущего."},
+{q:"Choose the correct form.",o:["will be study","will be studying","will studying"],a:1,e:"Правильная формула: will be + studying."},
+{q:"Don't call at 8; we ___ dinner.",o:["will be having","will have had yesterday","are had"],a:0,e:"В 8 вечера действие будет происходить."},
+{q:"___ he be waiting for us at the station?",o:["Does","Will","Is"],a:1,e:"Вопрос начинается с Will."},
+{q:"At this time tomorrow, I ___ my exam.",o:["will be taking","will taking","am take"],a:0,e:"Will be taking — процесс в определённый момент будущего."},
+{q:"Which sentence focuses on an action in progress in the future?",o:["I will finish the task later.","I will be doing the task at 5 p.m.","I finished it yesterday."],a:1,e:"At 5 p.m. действие будет в процессе."},
+{q:"They ___ be staying at the hotel next weekend.",o:["will","are","did"],a:0,e:"После subject используется will be staying."},
+{q:"At 7 tomorrow, the gamers ___ the new update.",o:["will be testing","will tests","are tested"],a:0,e:"Will be testing описывает запланированный процесс в будущем."}
+],
+presentPerfect: [
+{q:"I ___ finished my homework.",o:["has","have","am"],a:1,e:"I + have + V3."},
+{q:"She has ___ the new episode.",o:["saw","see","seen"],a:2,e:"See → saw → seen; после has нужна третья форма."},
+{q:"They ___ never visited Japan.",o:["has","have","did"],a:1,e:"They + have."},
+{q:"He has lived here ___ 2020.",o:["for","since","from"],a:1,e:"Since + точка начала."},
+{q:"We have known each other ___ five years.",o:["since","for","at"],a:1,e:"For + период времени."},
+{q:"___ you ever tried sushi?",o:["Did","Have","Has"],a:1,e:"Have you ever…? спрашивает об опыте."},
+{q:"She hasn't ___ the task yet.",o:["finish","finished","finishing"],a:1,e:"После hasn't нужна V3: finished."},
+{q:"I have just ___ the message.",o:["send","sent","sended"],a:1,e:"Send → sent → sent."},
+{q:"Choose the correct sentence.",o:["He have lost his key.","He has lost his key.","He has lose his key."],a:1,e:"He + has + V3."},
+{q:"We ___ already eaten.",o:["have","has","are"],a:0,e:"We + have."},
+{q:"Which sentence focuses on experience?",o:["I visited Rome in 2022.","I have visited Rome.","I visit Rome every year."],a:1,e:"Present Perfect может описывать опыт без точного времени в прошлом."},
+{q:"She has worked here ___ two months.",o:["since","for","yesterday"],a:1,e:"For two months — в течение двух месяцев."},
+{q:"___ Tom finished the game yet?",o:["Has","Did","Is"],a:0,e:"Has + subject + V3 + yet?"}, 
+{q:"I haven't seen him ___.",o:["already","yet","since"],a:1,e:"Yet часто используется в отрицаниях и вопросах."},
+{q:"Choose the correct past participle of «write».",o:["writed","wrote","written"],a:2,e:"Write → wrote → written."}
+],
+pastPerfect: [
+{q:"By the time we arrived, the film ___.",o:["started","had started","has started"],a:1,e:"Past Perfect показывает действие, завершившееся до другого события в прошлом."},
+{q:"She ___ finished dinner before the guests came.",o:["had","has","did"],a:0,e:"Past Perfect: had + V3."},
+{q:"They had ___ the map before night fell.",o:["find","found","finding"],a:1,e:"Find → found → found; нужна третья форма."},
+{q:"He ___ never seen snow before he moved north.",o:["had","has","did"],a:0,e:"Речь о более раннем прошлом."},
+{q:"Choose the correct negative.",o:["I hadn't heard the story.","I didn't had heard the story.","I hadn't hear the story."],a:0,e:"Отрицание: hadn't + V3."},
+{q:"___ you finished the game before the update arrived?",o:["Had","Have","Did had"],a:0,e:"Вопрос: Had + subject + V3?"}, 
+{q:"When we got to the station, the train ___ already left.",o:["have","had","was"],a:1,e:"Had already left — поезд уехал до нашего приезда."},
+{q:"She was upset because she ___ her ticket.",o:["had lost","has lose","did lost"],a:0,e:"Потеря произошла раньше её состояния."},
+{q:"By 2019, the studio ___ three games.",o:["had released","has release","released has"],a:0,e:"Had released — результат к моменту в прошлом."},
+{q:"Past Perfect formula is…",o:["had + V3","have/has + V3","will have + V3"],a:0,e:"Past Perfect = had + past participle (V3)."},
+{q:"He couldn't open the door because he ___ the key.",o:["had forgotten","has forgot","did forgotten"],a:0,e:"Had forgotten — забыл до попытки открыть дверь."},
+{q:"Which event happened first: «I had eaten when Sam arrived»?",o:["Sam arrived","I ate","Both happen in the future"],a:1,e:"Past Perfect marks the earlier event: I had eaten."},
+{q:"They ___ the castle before, so they knew the way.",o:["had visited","have visit","did visited"],a:0,e:"Посещение произошло раньше прошлого момента."},
+{q:"I realised that I ___ my notebook at home.",o:["had left","has left","did left"],a:0,e:"Had left — оставил до того, как понял."},
+{q:"Choose the correct sentence.",o:["After she had saved the file, she shut down the computer.","After she has save the file, she shut down.","After she had save the file, she shuts down."],a:0,e:"Had saved — третья форма правильного глагола с -ed."}
+],
+futurePerfect: [
+{q:"By Friday, I ___ the project.",o:["will have finished","had finished","have finished"],a:0,e:"Future Perfect: will have + V3 — будет завершено к моменту в будущем."},
+{q:"By 2030, they ___ a new city.",o:["will have built","will has built","have build"],a:0,e:"Will have + V3: built."},
+{q:"She ___ have completed the course by June.",o:["will","has","did"],a:0,e:"Утверждение Future Perfect: will have completed."},
+{q:"By the time you arrive, we ___ dinner.",o:["will have cooked","will cooked","had cook"],a:0,e:"Действие будет завершено до будущего момента."},
+{q:"Choose the correct negative.",o:["They won't have arrived by noon.","They won't has arrived by noon.","They don't have arrived by noon."],a:0,e:"Won't have + V3."},
+{q:"___ you have finished by 6 p.m.?",o:["Will","Do","Have will"],a:0,e:"Вопрос: Will + subject + have + V3?"}, 
+{q:"By next month, he ___ here for ten years.",o:["will have worked","will has worked","had work"],a:0,e:"Future Perfect может указывать на длительность к будущему моменту."},
+{q:"By midnight, the team ___ the mission.",o:["will have completed","will completed have","has completed"],a:0,e:"Will have completed — завершение к полуночи."},
+{q:"Future Perfect formula is…",o:["will have + V3","had + V3","will be + verb-ing"],a:0,e:"Future Perfect = will have + третья форма."},
+{q:"She ___ have read all three books by the end of summer.",o:["will","has","had"],a:0,e:"Will have read — завершит к сроку."},
+{q:"By the time the guests arrive, we ___ the room.",o:["will have cleaned","will cleaned","had cleaning"],a:0,e:"Will have cleaned — комната будет убрана заранее."},
+{q:"Which phrase is commonly used with Future Perfect?",o:["by next year","yesterday morning","right now"],a:0,e:"By next year обозначает крайний момент в будущем."},
+{q:"They will have ___ the bridge by winter.",o:["build","built","building"],a:1,e:"Build → built → built."},
+{q:"I ___ have saved enough money by December.",o:["will","am","did"],a:0,e:"Will have saved — накоплю к декабрю."},
+{q:"Choose the correct sentence.",o:["By 8, we will have finished dinner.","By 8, we will finished dinner.","By 8, we have finish dinner."],a:0,e:"Will have + V3: will have finished."}
+]
+};
+ENGLISH_TOPIC_QUESTIONS.pastSimple = window.ENGLISH_COURSE_QUESTIONS.past;
+ENGLISH_TOPIC_QUESTIONS.futureSimple = window.ENGLISH_COURSE_QUESTIONS.future;
+Object.assign(window.ENGLISH_COURSE_QUESTIONS, ENGLISH_TOPIC_QUESTIONS);
