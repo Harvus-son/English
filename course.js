@@ -42,12 +42,17 @@ function renderCourseExam(){
 function setupRetelling(){
  const box=$course("#retellText"),save=$course("#saveRetelling"),status=$course("#retellStatus");if(!box||!save)return;
  const key="course_retell_"+document.body.dataset.course;box.value=loadTextLocal(key);
+ const counter=$course("#retellCounter");
+ const sentenceCount=()=>box.value.trim()?box.value.trim().split(/[.!?]+/).filter(s=>s.trim()).length:0;
+ const updateCounter=()=>{const n=sentenceCount();if(counter)counter.textContent=n+" из 5 предложений"+(n===5?" ✓":" — старайся написать ровно 5");};
+ box.addEventListener("input",updateCounter);updateCounter();
  save.addEventListener("click",async()=>{
   const value=box.value.trim();saveTextLocal(key,value);
   if(!value){if(status)status.textContent="Сначала напиши пересказ.";return;}
+  const n=sentenceCount();const prefix="Черновик сохранён ("+n+" предложений из 5). ";
   const client=window.englishClient;
-  if(client){try{const {data:{user}}=await client.auth.getUser();if(user){const {error}=await client.from("writing_submissions").insert({student_id:user.id,section:document.body.dataset.course,kind:"retelling",prompt:"Пересказ текста из учебного раздела в 5 предложениях",content:value});if(error)throw error;if(status)status.textContent="Сохранено и отправлено преподавателю.";return;}}catch(e){if(status)status.textContent="Сохранено в этом браузере; синхронизация не выполнена.";return;}}
-  if(status)status.textContent="Сохранено в этом браузере. Для отправки преподавателю войди через «Аккаунт ученика».";
+  if(client){try{const {data:{user}}=await client.auth.getUser();if(user){const {error}=await client.from("writing_submissions").insert({student_id:user.id,section:document.body.dataset.course,kind:"retelling",prompt:"Пересказ текста в 5 предложениях; отправлено предложений: "+n,content:value});if(error)throw error;if(status)status.textContent=prefix+"Отправлено преподавателю.";return;}}catch(e){if(status)status.textContent=prefix+"Сохранено в этом браузере, синхронизация не выполнена.";return;}}
+  if(status)status.textContent=prefix+"Сохранено в этом браузере. Для отправки преподавателю войди через «Аккаунт ученика».";
  });
 }
 document.addEventListener("DOMContentLoaded",()=>{renderCourseExam();setupRetelling();});
