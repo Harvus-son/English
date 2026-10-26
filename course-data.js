@@ -81,7 +81,7 @@ perfect: [
 {q:"Which sentence focuses on experience?",o:["I visited Rome in 2022.","I have visited Rome.","I visit Rome every year."],a:1,e:"Present Perfect может описывать жизненный опыт без точного прошлого времени."},
 {q:"She has worked here ___ two months.",o:["since","for","yesterday"],a:1,e:"For two months — в течение двух месяцев."},
 {q:"___ Tom finished the game yet?",o:["Has","Did","Is"],a:0,e:"Вопрос: Has + Tom + V3 + yet?"}, 
-{q:"I haven't seen him ___.",o:["already","yet","since"],a:1,e:"Yet часто используется в вопросах и отрицаниях."},
-{q:"Choose the correct past participle of «write».",o:["writed","wrote","written"],a:2,e:"Write → wrote → written."}
+{q:"By the time we arrived, the train ___.",o:["has left","had left","will have left"],a:1,e:"Past Perfect: had + V3 — поезд ушёл раньше момента, когда мы приехали."},
+{q:"By Friday, I ___ the project.",o:["will have finished","had finished","have finished"],a:0,e:"Future Perfect: will have + V3 — действие будет завершено к моменту в будущем."}
 ]
 };
