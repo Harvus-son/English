@@ -1,8 +1,26 @@
 const $=s=>document.querySelector(s);
 const $$=(s,r=document)=>r.querySelectorAll(s);
 const KEY_XP="english_xp", KEY_WRITING="english_writing";
-const completed=JSON.parse(localStorage.getItem("english_completed")||"[]");
-const state={xp:Number(localStorage.getItem(KEY_XP)||0),practice:completed.length,completed};
+function readArray(key){
+  try {
+    const value=JSON.parse(localStorage.getItem(key)||"[]");
+    return Array.isArray(value) ? value.filter(Number.isInteger) : [];
+  } catch(error) {
+    console.warn("Invalid saved learning data was ignored:",key,error);
+    return [];
+  }
+}
+function readNumber(key){
+  try {
+    const value=Number(localStorage.getItem(key)||0);
+    return Number.isFinite(value)&&value>=0 ? Math.min(value,10000000) : 0;
+  } catch(error) {
+    console.warn("Saved number was ignored:",key,error);
+    return 0;
+  }
+}
+const completed=readArray("english_completed").filter((id,index,array)=>id>=0&&id<10000&&array.indexOf(id)===index);
+const state={xp:readNumber(KEY_XP),practice:completed.length,completed};
 
 function updateProgress(){
   const percent=Math.min(100,Math.round((state.practice/tasks.length)*100));
@@ -10,7 +28,11 @@ function updateProgress(){
   if(score)score.textContent=state.xp;if(xp)xp.textContent=state.xp;if(result)result.textContent=state.practice+" / "+tasks.length;
   if(bar)bar.style.width=percent+"%";if(side)side.style.width=percent+"%";if(sideText)sideText.textContent=percent+"% практики";
 }
-function saveProgress(){localStorage.setItem(KEY_XP,String(state.xp));localStorage.setItem("english_practice",String(state.completed.length));updateProgress();}
+function safeSave(key,value){
+  try { localStorage.setItem(key,value); return true; }
+  catch(error) { console.warn("Could not save learning progress:",key,error); toast("Не удалось сохранить прогресс в этом браузере."); return false; }
+}
+function saveProgress(){safeSave(KEY_XP,String(state.xp));safeSave("english_practice",String(state.completed.length));updateProgress();}
 function toast(msg){const el=$("#toast");if(!el)return;el.textContent=msg;el.classList.add("show");clearTimeout(window.toastTimer);window.toastTimer=setTimeout(()=>el.classList.remove("show"),2200);}
 
 const tasks=[
@@ -47,15 +69,16 @@ function renderPractice(){
  else{card.querySelector("[data-check]").addEventListener("click",()=>checkInput(card,i));card.querySelector("input").addEventListener("keydown",e=>{if(e.key==="Enter")checkInput(card,i);});}});
 }
 function mark(card,ok,message){
- const f=card.querySelector(".feedback");f.className="feedback "+(ok?"correct":"wrong");f.innerHTML=(ok?"✓ Correct! ":"✗ Пока неверно. ")+message;
- if(ok&&!card.dataset.done){card.dataset.done="1";if(!state.completed.includes(Number(card.dataset.task))){state.completed.push(Number(card.dataset.task));state.xp+=10;localStorage.setItem("english_completed",JSON.stringify(state.completed));}state.practice=state.completed.length;saveProgress();}
+ const f=card.querySelector(".feedback");f.className="feedback "+(ok?"correct":"wrong");f.textContent=(ok?"✓ Correct! ":"✗ Пока неверно. ")+message;
+ if(ok&&!card.dataset.done){card.dataset.done="1";if(!state.completed.includes(Number(card.dataset.task))){state.completed.push(Number(card.dataset.task));state.xp+=10;safeSave("english_completed",JSON.stringify(state.completed));}state.practice=state.completed.length;saveProgress();}
 }
 function checkChoice(card,i,n){if(card.dataset.done)return;if(n===tasks[i].answer){$$(".options button",card).forEach(b=>b.disabled=true);mark(card,true,tasks[i].explain);}else mark(card,false,tasks[i].explain+" Попробуй другой вариант.");}
 function normalize(v){return v.trim().toLowerCase().replace(/[.!?]+$/,"").replace(/\s+/g," ");}
 function checkInput(card,i){if(card.dataset.done)return;const value=normalize(card.querySelector("input").value),ok=tasks[i].accept.some(a=>normalize(a)===value);mark(card,ok,ok?"Отлично.":"Ожидаемый вариант: "+tasks[i].answer);if(ok)card.querySelector("input").disabled=true;}
 
 const finish=$("#finishPractice");if(finish)finish.addEventListener("click",()=>{window.location.href="./progress.html";});
-const writing=$("#saveWriting");if(writing)writing.addEventListener("click",()=>{const value=$("#writingTask").value.trim();if(value.length<20){$("#writingStatus").textContent="Напиши хотя бы несколько предложений.";return;}localStorage.setItem(KEY_WRITING,value);$("#writingStatus").textContent="✓ Ответ сохранён";toast("Письменная работа сохранена.");});
+const writing=$("#saveWriting");if(writing)writing.addEventListener("click",()=>{const value=$("#writingTask").value.trim();if(value.length<20){$("#writingStatus").textContent="Напиши хотя бы несколько предложений.";return;}safeSave(KEY_WRITING,value);$("#writingStatus").textContent="✓ Ответ сохранён";toast("Письменная работа сохранена.");});
 const answers=$("#showAnswers");if(answers)answers.addEventListener("click",()=>{const panel=$("#answers");panel.classList.toggle("hidden");panel.innerHTML="<b>Ответы:</b><br>1. She plays games every day.<br>2. He doesn't like football.<br>3. Does she like music?<br>4. Do you work on Monday?<br>5. He watches videos.<br>6. My brother studies English.";});
-const savedWriting=localStorage.getItem(KEY_WRITING),writingField=$("#writingTask");if(savedWriting&&writingField)writingField.value=savedWriting;
+let savedWriting="";try{savedWriting=localStorage.getItem(KEY_WRITING)||"";}catch(error){console.warn("Could not read saved writing:",error);}
+const writingField=$("#writingTask");if(savedWriting&&writingField)writingField.value=savedWriting;
 renderPractice();updateProgress();
