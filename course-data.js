@@ -210,3 +210,22 @@ futurePerfect: [
 ENGLISH_TOPIC_QUESTIONS.pastSimple = window.ENGLISH_COURSE_QUESTIONS.past;
 ENGLISH_TOPIC_QUESTIONS.futureSimple = window.ENGLISH_COURSE_QUESTIONS.future;
 Object.assign(window.ENGLISH_COURSE_QUESTIONS, ENGLISH_TOPIC_QUESTIONS);
+
+
+window.ENGLISH_COURSE_QUESTIONS.pastIrregular = [
+{q:"Yesterday I ___ to the park.",o:["go","goed","went"],a:2,e:"Go — went — gone. Во второй форме используем went."},
+{q:"She ___ a beautiful picture last night.",o:["draw","drew","drawed"],a:1,e:"Draw — drew — drawn. В Past Simple нужна форма V2: drew."},
+{q:"We ___ a strange sound in the forest.",o:["heard","heared","hear"],a:0,e:"Hear — heard — heard."},
+{q:"He ___ his keys yesterday.",o:["lose","lost","losed"],a:1,e:"Lose — lost — lost."},
+{q:"They ___ a new house last year.",o:["builded","build","built"],a:2,e:"Build — built — built."},
+{q:"Choose the correct form: take — ... — taken.",o:["taked","took","takeded"],a:1,e:"Take — took — taken."},
+{q:"I didn't ___ breakfast yesterday.",o:["ate","eat","eaten"],a:1,e:"После didn't всегда используем V1: eat."},
+{q:"___ you see the new film last weekend?",o:["Did","Were","Do"],a:0,e:"Вопрос Past Simple: Did + subject + V1."},
+{q:"Choose the correct sentence.",o:["She bought a new book.","She buyed a new book.","She did bought a new book."],a:0,e:"Buy — bought — bought. В утверждении используем V2."},
+{q:"What is the third form (V3) of write?",o:["wrote","written","writed"],a:1,e:"Write — wrote — written. V3 нужна, например, в Present Perfect."},
+{q:"Last night, Tom ___ home late.",o:["came","comed","come"],a:0,e:"Come — came — come."},
+{q:"We ___ the answer, so we solved the puzzle.",o:["knew","knowed","know"],a:0,e:"Know — knew — known."},
+{q:"Choose the correct negative sentence.",o:["He didn't found the map.","He didn't find the map.","He doesn't found the map."],a:1,e:"После didn't используем V1: find."},
+{q:"They ___ a photo near the castle.",o:["took","taked","take"],a:0,e:"Take — took — taken."},
+{q:"Choose the correct three forms.",o:["speak — spoke — spoken","speak — speaked — spoken","speak — spoke — speaked"],a:0,e:"Speak — spoke — spoken: V1, V2, V3."}
+];
