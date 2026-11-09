@@ -19,7 +19,7 @@ function readNumber(key){
     return 0;
   }
 }
-const completed=readArray("english_completed").filter((id,index,array)=>id>=0&&id<tasks.length&&array.indexOf(id)===index);
+const completed=readArray("english_completed").filter((id,index,array)=>id>=0&&id<10000&&array.indexOf(id)===index);
 const state={xp:readNumber(KEY_XP),practice:completed.length,completed};
 
 function updateProgress(){
