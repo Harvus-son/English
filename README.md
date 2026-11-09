@@ -53,3 +53,18 @@
 - Отдельные страницы каждой темы — `present-simple.html`, `present-continuous.html`, `past-simple.html`, `past-continuous.html`, `future-simple.html`, `future-continuous.html`, `present-perfect.html`, `past-perfect.html`, `future-perfect.html`.
 
 Проект рассчитан на публикацию как статический сайт через GitHub Pages.
+
+
+## Improvements branch — safety and learning progress
+
+- Browser progress is restored through guarded JSON parsing; malformed values are ignored.
+- Saved XP is checked for a finite, non-negative numeric value and capped before display.
+- Browser storage failures are handled without crashing the practice screen.
+- Feedback generated from task text is rendered as text, not interpreted as HTML.
+- The teacher dashboard checks the authenticated user and the teacher/admin role before requesting student records. Database access still depends on correctly installed Supabase Row Level Security policies.
+
+## Security boundaries
+
+- The Supabase anon/publishable key may be present in a browser app only when RLS is enabled and policies are correct. Never put a service-role key or database password in client files.
+- localStorage is controlled by the visitor. It is suitable for convenience preferences and local progress, but not trusted proof of achievement.
+- Review and apply the SQL in the student tracking setup guide before using real student data. Test teacher/student access with separate accounts.
