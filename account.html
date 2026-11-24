@@ -6,4 +6,4 @@ document.querySelector('#signupForm').addEventListener('submit',async e=>{e.prev
 document.querySelector('#loginForm').addEventListener('submit',async e=>{e.preventDefault();if(!window.englishClient){message('Сначала заполните supabase-config.js и примените supabase-schema.sql.');return}const email=document.querySelector('#loginEmail').value.trim(),password=document.querySelector('#loginPassword').value;const {error}=await englishClient.auth.signInWithPassword({email,password});if(error){message('Не удалось войти: '+error.message);return}message('Вход выполнен.');await refreshSession();});
 document.querySelector('#logout').addEventListener('click',async()=>{if(window.englishClient)await englishClient.auth.signOut();sessionPanel.hidden=true;message('Вы вышли из аккаунта.');});
 refreshSession();
-</script></body></html>
+</script><script src="./theme-toggle.js"></script></body></html>
