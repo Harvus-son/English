@@ -111,3 +111,50 @@ body[data-course] .course-footer{border-color:var(--line)}
 button:focus-visible,a:focus-visible{outline:3px solid var(--accent2);outline-offset:3px}
 @media(max-width:700px){.sidebar{width:62px;background:#0e1525}.sidebar .nav{padding:12px 8px}main{margin-left:62px;width:calc(100% - 62px);padding:18px 14px 44px}.lesson-hero{border-radius:17px}.content-card,.practice-card{border-radius:15px}.topic-card{padding:20px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+
+/* Palette refinement — English: calm indigo */
+:root{
+ --bg:#101522;--panel:#1a2232;--panel2:#222d40;--text:#e8edf5;
+ --muted:#9aa7ba;--line:rgba(220,230,242,.10);--accent:#9caed2;
+ --accent2:#8197c4;--green:#83b69e;--red:#d88f98;
+ --shadow:0 18px 48px rgba(0,0,0,.20);
+}
+body{background:radial-gradient(ellipse at 90% 0%,rgba(129,151,196,.08),transparent 38%),var(--bg);color:var(--text)}
+.sidebar{background:#141c2b;border-color:var(--line)}
+.brand-mark{background:linear-gradient(135deg,#9caed2,#8197c4);color:#172033}
+.nav{color:#a7b2c4}.nav.active,.nav:hover{background:rgba(156,174,210,.13);color:#c0cce5}
+.level-card,.content-card,.practice-card,.topic-card,.progress-overview>div+div{background:var(--panel);border-color:var(--line)}
+.level-card{background:#202b3e}
+.mini-progress,.progress-track{background:#303c50}
+.mini-progress i,.progress-track i{background:linear-gradient(90deg,#8197c4,#9caed2)}
+.eyebrow,.step,.task-number{color:#b6c4df}
+.step,.task-number{background:rgba(156,174,210,.14)}
+.streak{background:var(--panel);border-color:var(--line);color:var(--text)}
+.lesson-hero{background:linear-gradient(115deg,#293851,#344563 58%,#354c58);border-color:rgba(156,174,210,.16)}
+.lesson-hero p{color:#d2dbea}
+.hero-tags span{background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.12)}
+.goal-grid div,.use-grid div,.mini-table span,.text-questions span,.vocab-grid div,.big-scheme div,.speech-grid span{background:var(--panel2);border-color:var(--line);color:var(--text)}
+.goal-grid b,.use-grid b,.mark,.formula strong,.timeline span,.big-scheme strong,.vocab-grid em{color:#b6c4df}
+.formula,.sentence-map,.question-flow,.reading-art,.self-list code{background:#202b3e;border-color:var(--line);color:var(--text)}
+.sentence-map .subject,.question-flow span:first-child{color:#b6c4df}
+.sentence-map .verb{color:#91a6d0}.sentence-map .rest{color:var(--text)}
+.note,.example-box,.answer-panel{background:rgba(131,182,158,.09);border:1px solid rgba(131,182,158,.18);color:var(--text)}
+.warning{background:rgba(216,143,152,.09);border-color:rgba(216,143,152,.2);color:var(--text)}
+.example-box span,.muted{color:var(--muted)}
+.answers b,.feedback.correct{background:rgba(131,182,158,.13);color:#a6d2bd}
+.feedback.wrong{background:rgba(216,143,152,.12);color:#e5aab1}
+.next-button,.small-button,.input-row button{background:#9caed2;color:#172033}
+.options button,.ghost-button,.course-nav a{background:var(--panel2);border-color:var(--line);color:var(--text)}
+.options button:hover:not(:disabled),.ghost-button:hover,.course-nav a:hover{border-color:rgba(156,174,210,.5);background:rgba(156,174,210,.10)}
+.input-row input,.self-grid textarea,.private-notes,body[data-course] input,body[data-course] textarea{background:#141d2c;border-color:var(--line);color:var(--text)}
+.input-row input:focus,.self-grid textarea:focus,.private-notes:focus,body[data-course] input:focus,body[data-course] textarea:focus{border-color:#9caed2;box-shadow:0 0 0 3px rgba(156,174,210,.13)}
+.topic-card:hover{border-color:rgba(156,174,210,.38)}
+.topic-card em{color:#b6c4df}
+.big-xp{background:linear-gradient(135deg,#26354d,#354563);border-color:var(--line)}
+.toast{background:#dce8e4;color:#20332e}
+body[data-course] .course-rule{background:var(--panel2);border-color:var(--line);border-left-color:#9caed2}
+body[data-course] .reading-text,body[data-course] .question-example>div{background:var(--panel2);border-color:var(--line);color:var(--text)}
+body[data-course] .options button.selected{background:rgba(156,174,210,.14);color:#c0cce5;border-color:#9caed2}
+body[data-course] .rule-table th{background:rgba(156,174,210,.13);color:#c0cce5}
+body[data-course] .inline-note{background:rgba(156,174,210,.09);color:var(--text)}
+button:focus-visible,a:focus-visible{outline-color:#c0cce5}
